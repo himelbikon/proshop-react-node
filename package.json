@@ -1,0 +1,23 @@
+{
+  "name": "proshop-react-node",
+  "version": "1.0.0",
+  "description": "MERN Shopping cart app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/himelbikon/proshop-react-node.git"
+  },
+  "author": "SK Himel Haque",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/himelbikon/proshop-react-node/issues"
+  },
+  "homepage": "https://github.com/himelbikon/proshop-react-node#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}

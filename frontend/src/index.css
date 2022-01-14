@@ -6,3 +6,11 @@ a {
   text-decoration: none;
   color: inherit;
 }
+
+.rating span {
+  margin: 0.05rem;
+}
+
+h3 {
+  padding: 1rem 0;
+}
