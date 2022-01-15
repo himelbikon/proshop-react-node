@@ -22,7 +22,7 @@ router.get(
 // @access Public
 router.get(
   "/:id",
-  asyncHandler(async (req, res) => {
+  asyncHandler(async (req, res, next) => {
     const product = await Product.findById(req.params.id);
 
     if (product) {
