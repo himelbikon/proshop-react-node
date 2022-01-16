@@ -1,7 +1,1 @@
-// const na = "aaaa";
-
-const a = () => {
-  console.log(na);
-};
-
-export default a;
+const a = [3, 4, 5, 6, 7, 10];
