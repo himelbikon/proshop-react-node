@@ -1,5 +1,5 @@
 import a from "./1.js";
 
-const na = "qqqqqqqqqq";
+const na = "qqaqqqqqqqq";
 
 a();
