@@ -35,7 +35,7 @@ const importData = async () => {
   }
 };
 
-const destryData = async () => {
+const destroyData = async () => {
   try {
     await Order.deleteMany();
     await Product.deleteMany();
@@ -50,7 +50,7 @@ const destryData = async () => {
 };
 
 if (process.argv[2] === "-d") {
-  destryData();
+  destroyData();
 } else {
   importData();
 }
