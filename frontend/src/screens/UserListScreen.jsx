@@ -25,7 +25,7 @@ const UserListScreen = () => {
   } = userDelete
 
   useEffect(() => {
-    if (userInfo && !userInfo.asAdmin) {
+    if (userInfo && userInfo.isAdmin) {
       dispatch(listUsers())
     } else {
       navigate("/login?redirect=/admin/userlist")
