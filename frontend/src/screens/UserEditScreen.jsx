@@ -7,6 +7,7 @@ import FormContainer from "../components/FormContainer"
 import Message from "../components/Message"
 import Loader from "../components/Loader"
 import { USER_UPDATE_RESET } from "../constants/userConstants"
+
 const UserEditScreen = () => {
   const dispatch = useDispatch()
   const params = useParams()
@@ -93,7 +94,6 @@ const UserEditScreen = () => {
             </Form.Group>
 
             <Form.Group controlId="isAdmin" className="my-3">
-              <Form.Label>Email Address</Form.Label>
               <Form.Check
                 type="checkbox"
                 label="Is Admin"
