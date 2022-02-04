@@ -42,7 +42,6 @@ const ProductEditScreen = () => {
     } else {
       if (!product.name || product._id !== productId) {
         dispatch(listProductDetails(productId))
-        console.log("new", "product.name", product.name)
       } else {
         setName(product.name)
         setPrice(product.price)
@@ -51,7 +50,6 @@ const ProductEditScreen = () => {
         setCategory(product.category)
         setCountInStock(product.countInStock)
         setDescription(product.description)
-        console.log("old", product._id, productId)
       }
     }
 
@@ -151,7 +149,6 @@ const ProductEditScreen = () => {
                 <Form.Control
                   type="file"
                   id="image-file"
-                  custom
                   onChange={uploadFileHandler}
                 />
               </Form.Group>

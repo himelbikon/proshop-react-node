@@ -4,6 +4,7 @@ import User from "../models/userModel.js"
 
 const protect = asyncHandler(async (req, res, next) => {
   let token
+  console.log(`${req.headers.authorization}`.yellow)
 
   if (
     req.headers.authorization &&
@@ -11,6 +12,7 @@ const protect = asyncHandler(async (req, res, next) => {
   ) {
     try {
       token = req.headers.authorization.split(" ")[1]
+      console.log(`${token}`.yellow)
       const decoded = jwt.verify(token, process.env.JWT_SECRET)
 
       req.user = await User.findById(decoded.id).select("-password")
