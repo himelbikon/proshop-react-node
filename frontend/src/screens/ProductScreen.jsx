@@ -1,38 +1,42 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react"
+import { Link, useParams, useNavigate } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux"
+import { Row, Col, Image, ListGroup, Card, Button, Form } from "react-bootstrap"
+import Rating from "../components/Rating"
 import {
-  Row,
-  Col,
-  Image,
-  ListGroup,
-  Card,
-  Button,
-  Form,
-} from "react-bootstrap";
-import Rating from "../components/Rating";
-import { listProductDetails } from "../actions/productActions";
-import Loader from "../components/Loader";
-import Message from "../components/Message";
+  listProductDetails,
+  createProductReview,
+} from "../actions/productActions"
+import Loader from "../components/Loader"
+import Message from "../components/Message"
+import { PRODUCT_CREATE_REVIEW_RESET } from "../constants/productConstants"
 
 const ProductScreen = () => {
-  const params = useParams();
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  const params = useParams()
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
 
-  const [qty, setQty] = useState(1);
+  const [qty, setQty] = useState(1)
+  const [rating, setRating] = useState(0)
+  const [comment, setComment] = useState("")
 
-  const productDetails = useSelector((state) => state.productDetails);
+  const productDetails = useSelector((state) => state.productDetails)
+  const { product, loading, error } = productDetails
 
-  const { product, loading, error } = productDetails;
+  const userLogin = useSelector((state) => state.userLogin)
+  const { userInfo } = userLogin
+
+  const productReviewCreate = useSelector((state) => state.productReviewCreate)
+  const { success: successProductReview, error: errorProductReview } =
+    productReviewCreate
 
   useEffect(() => {
-    dispatch(listProductDetails(params.id));
-  }, [dispatch, params]);
+    dispatch(listProductDetails(params.id))
+  }, [dispatch, params])
 
   const addToCartHandler = () => {
-    navigate(`/cart?id=${params.id}&qty=${qty}`);
-  };
+    navigate(`/cart?id=${params.id}&qty=${qty}`)
+  }
 
   return (
     <>
@@ -124,7 +128,7 @@ const ProductScreen = () => {
         </Row>
       )}
     </>
-  );
-};
+  )
+}
 
-export default ProductScreen;
+export default ProductScreen
